@@ -6,9 +6,9 @@ import Session from '../model/sessionModel.js';
 import * as factory from './handlerFactory.js';
 // const factory = require('./handlerFactory');
 
-export const getAllCoursePost = factory.getAll(Session);
+export const getAllSessionPost = factory.getAll(Session);
 
-export const createCoursePost = factory.createOne(Session);
-export const getCoursePost = factory.getOne(Session);
-export const updateCoursePost = factory.updateOne(Session);
-export const deleteCoursePost = factory.deleteOne(Session);
+export const createSessionPost = factory.createOne(Session);
+export const getSessionPost = factory.getOne(Session);
+export const updateSessionPost = factory.updateOne(Session);
+export const deleteSessionPost = factory.deleteOne(Session);

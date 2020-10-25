@@ -13,20 +13,11 @@ const sessionSchema = new mongoose.Schema({
         type: String,
         required: [true, "A course allocation has a batch"]
     },
-    course: {
-        course_name: {
-            type: String,
-            required: [true, 'A course must have a course name'],
-        },
-        course_code: {
-            type: String,
-            required: [true, 'A course must have a course code'],
-        },
-        credit: Number,
-        type: Object,
-        ref: 'Course',
-        required: [true, 'sessions must belong to Course.'],
-    }
+    sections:[String],
+    courseId: [{
+        type:mongoose.Schema.ObjectId,
+        ref:'Course'
+    }]
 })
 
 export default mongoose.model('Session', sessionSchema);
