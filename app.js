@@ -6,6 +6,7 @@ const app = express();
 import AppError from './utils/appError.js';
 import courseRoutes from './routes/courseRoutes.js';
 import sessionRoutes from './routes/sessionRoute.js';
+import teacherRoutes from './routes/teacherRoute.js';
 
 // view engine
 app.set('view engine', 'ejs');
@@ -22,6 +23,7 @@ app.use(express.json());
 // Use Routes
 app.use('/api/courses', courseRoutes);
 app.use('/api/sessions', sessionRoutes);
+app.use('/api/teachers', teacherRoutes);
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
