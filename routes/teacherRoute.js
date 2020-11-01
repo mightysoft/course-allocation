@@ -6,8 +6,8 @@ const router = express.Router();
 router.get('/', teacherController.getAllTeacherPost);
 router.post('/create-teacher', teacherController.createTeacherPost);
 router.get('/teacher-details/:id', teacherController.getTeacherPost);
-router.patch('/update-teacher', teacherController.updateTeacherPost);
-router.delete('/delete-teacher', teacherController.deleteTeacherPost);
+router.patch('/update-teacher/:id', teacherController.updateTeacherPost);
+router.delete('/delete-teacher/:id', teacherController.deleteTeacherPost);
 
 
 
