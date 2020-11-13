@@ -11,6 +11,10 @@ const courseAllocationModel = new mongoose.Schema({
             type: mongoose.Schema.ObjectId,
             ref: 'Term',
         },
+        batch:{
+            type: mongoose.Schema.ObjectId,
+            ref: 'Batch',
+        },
         type: Object
     },
     course : {
