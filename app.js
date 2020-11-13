@@ -5,8 +5,13 @@ const app = express();
 
 import AppError from './utils/appError.js';
 import courseRoutes from './routes/courseRoutes.js';
-import sessionRoutes from './routes/sessionRoute.js';
+import sectionRoutes from './routes/sectionRoute.js';
 import teacherRoutes from './routes/teacherRoute.js';
+import levelRoutes from './routes/levelRoutes.js';
+import batchRoutes from './routes/batchRoutes.js';
+import termRoutes from './routes/termRoutes.js';
+import courseAllocationRoutes from './routes/courseAllocationRoute.js';
+
 
 // view engine
 app.set('view engine', 'ejs');
@@ -22,8 +27,12 @@ app.use(express.json());
 
 // Use Routes
 app.use('/api/courses', courseRoutes);
-app.use('/api/sessions', sessionRoutes);
+app.use('/api/sections', sectionRoutes);
 app.use('/api/teachers', teacherRoutes);
+app.use('/api/levels', levelRoutes);
+app.use('/api/terms', termRoutes);
+app.use('/api/batchs', batchRoutes);
+app.use('/api/course-Allocation', courseAllocationRoutes);
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
