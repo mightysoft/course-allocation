@@ -1,5 +1,5 @@
-import AppError from '../utils/appError.js';
 import catchAsync from '../utils/catchAsync.js';
+import AppError from '../utils/appError.js';
 
 export const deleteOne = Model =>
   catchAsync(async (req, res, next) => {

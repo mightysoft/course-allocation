@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
 
-
 const courseAllocationModel = new mongoose.Schema({
     session : {
         level: {
@@ -14,24 +13,46 @@ const courseAllocationModel = new mongoose.Schema({
         batch:{
             type: mongoose.Schema.ObjectId,
             ref: 'Batch',
-        },
-        type: Object
+        }
     },
-    course : {
-        teacherId:{
+    course : [{
+        teacher:{
             type: mongoose.Schema.ObjectId,
             ref: 'Teacher',
         },
-        section: {
+        section:[{
             type: mongoose.Schema.ObjectId,
             ref: 'Section',
-        },
-        courseId :{
+        }],
+        course :{
             type: mongoose.Schema.ObjectId,
             ref: 'Course',
-        },
-        type: Array
-    }
+        }
+    }]
+    
 })
+// Query middleware
+courseAllocationModel.pre(/^find/, function (next) {
+    this.populate({
+      path: 'course.teacher',
+      select: '-__v'
+    }).populate({
+        path: 'course.section',
+        select: '-__v'
+      }).populate({
+        path: 'course.course',
+        select: '-__v'
+      }).populate({
+        path: 'session.level',
+        select: '-__v'
+      }).populate({
+        path: 'session.term',
+        select: '-__v'
+      }).populate({
+        path: 'session.batch',
+        select: '-__v'
+      })
+    next();
+  });
 
 export default mongoose.model('CourseAllocation',courseAllocationModel);
