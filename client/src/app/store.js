@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import courseAllocationReducer from '../features/CourseAllocation/courseAllocationSlice';
 
 export default configureStore({
   reducer: {
-    counter: counterReducer,
+    courseAllocation: courseAllocationReducer,
   },
 });

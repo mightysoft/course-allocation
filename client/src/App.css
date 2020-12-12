@@ -1,20 +1,13 @@
-body {
-  margin: 20px;
-  padding: 20px;
-  height: auto;
-  width: 90%;
-  font-family: -apple-system, BlinkMacSystemFont, 'Poppins', 'Segoe UI',
-    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: #fdfdfd;
+* {
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+   background: #fdfdfd;
 }
+
 
 .App {
   text-align: center;

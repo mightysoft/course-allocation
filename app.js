@@ -3,6 +3,7 @@ import morgan from 'morgan';
 
 const app = express();
 
+import cors from 'cors'
 import AppError from './utils/appError.js';
 import courseRoutes from './routes/courseRoutes.js';
 import sectionRoutes from './routes/sectionRoute.js';
@@ -12,6 +13,13 @@ import batchRoutes from './routes/batchRoutes.js';
 import termRoutes from './routes/termRoutes.js';
 import courseAllocationRoutes from './routes/courseAllocationRoute.js';
 
+
+// 1) GLOBAL MIDDLEWARES
+// Implement CORS
+app.use(cors());
+
+app.options('*', cors());
+// app.options('/api/v1/tours/:id', cors());
 
 // view engine
 app.set('view engine', 'ejs');
