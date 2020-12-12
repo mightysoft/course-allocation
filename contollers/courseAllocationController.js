@@ -1,10 +1,28 @@
 
 import CourseAllocation from '../model/courseAllocationModel.js'
 import * as factory from './handlerFactory.js';
+// import Course from '../model/courseModel.js';
+// import Level from '../model/levelModel.js';
+// import Batch from '../model/batchModel.js';
+// import Term from '../model/termModel.js';
+// import Teacher from '../model/teacherModel.js';
+// import Section from '../model/sectionModel.js';
 
+import catchAsync from '../utils/catchAsync.js';
+// import AppError from '../utils/appError.js';
 
 export const createCourseAllocationPost = factory.createOne(CourseAllocation);
-export const getAllCourseAllocationPost = factory.getAll(CourseAllocation);
+export const getCourseAlloOne = factory.getOne(CourseAllocation);
+
+export const getAllCourseAllocationPost = catchAsync (async (req,res) =>{
+    const data = await CourseAllocation.find()    
+    return res.status(200).json({
+        status: 'success',
+        results: data.length,
+        data
+      });
+})
+
 
 
 // export const createOne = catchAsync(async (req, res, next) => {
