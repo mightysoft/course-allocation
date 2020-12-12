@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Navbar from './features/navbar/Navbar.component.jsx'
 import CourseAllocationTable from './features/CourseAllocation/CourseAllocationTable';
+import Footer from './features/footer/Footer.component';
 
 function App() {
   return (
@@ -10,6 +11,8 @@ function App() {
     <div className="container">
         <CourseAllocationTable />
     </div>
+
+    <Footer/>
   </>
   );
 }
